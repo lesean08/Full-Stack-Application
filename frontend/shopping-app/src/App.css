@@ -1,0 +1,114 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #db64ffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #fb61f3aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: cursive;
+}
+
+nav {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgb(117, 64, 116);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #6e333b;
+}
+
+.background {
+  background-image: url("https://cdn.pixabay.com/photo/2024/03/11/14/33/ai-generated-8626811_1280.png");
+  background-size: cover;
+  height: 100vh;
+  margin-top: -70px;
+  font-size: 50px;
+  background-repeat: no-repeat;
+}
+.profile-info {
+  background-color: #c390c6;
+  padding: 20px;
+}
+.background1 {
+  background-image: url("https://cdn.pixabay.com/photo/2018/07/11/00/00/write-3529978_1280.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin-top: -70px;
+  font-size: 50px;
+  background-repeat: no-repeat;
+}
+.background2 {
+  background-image: url("https://cdn.pixabay.com/photo/2023/04/16/08/35/skincare-7929470_1280.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin-top: -70px;
+  font-size: 50px;
+  background-repeat: no-repeat;
+}
+.background3 {
+  background-image: url("https://cdn.pixabay.com/photo/2018/07/11/00/00/write-3529976_1280.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin-top: -70px;
+  font-size: 50px;
+  background-repeat: no-repeat;
+}
