@@ -8,7 +8,7 @@ import './index.css';
 
 const root = createRoot(document.getElementById('root'));
 
-export const Nav = styled.nav`
+export const Navbar = styled.nav`
     /* Your styles here */
 `;
 

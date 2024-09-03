@@ -9,18 +9,8 @@ import Nav from './components/Navbar';
 import EnrollForm from './components/EnrollForm';
 import './App.css';
 import './index.css';
-//import background from "./image.png";
 
-const App = () => {
-  /*const myStyle = {
-    backgroundImage: `url(${background})`, 
-    height: "100vh",
-    marginTop: "-70px",
-    fontSize: "50px",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-  };*/
-
+function App() {
   return (
     <Router>
       <Nav />
@@ -38,6 +28,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
+}
 
 export default App;
