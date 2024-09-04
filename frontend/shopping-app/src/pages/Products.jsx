@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Products() {
-    // State to store products
+    
     const [products, setProducts] = useState([]);
 
-    // Function to fetch products from the API
+    
     const getProducts = () => {
-        axios.get('https://fakestoreapi.com/products')
+        axios.get('http://localhost:300')
             .then(res => {
-                // Assuming the API returns an array of products
+                
                 setProducts(res.data);
-                console.log(res.data); // Logs the data from the response
+                console.log(res.data); 
             })
             .catch(err => {
-                console.error(err); // Logs any errors
+                console.error(err); 
             });
     };
 

@@ -12,7 +12,7 @@ function Contact() {
 
     axios
       .post(
-        "https://your-backend-api-url/contact", 
+        "http://localhost:3000", 
         { email, message },
         { headers: { Accept: "application/json" } }
       )
@@ -49,7 +49,7 @@ function Contact() {
       >
         <h1>Contact Us</h1>
       </div>
-      <form onSubmit={submit} style={{ padding: '20px' }}>
+      <form onSubmit={submit} style={{ padding: '20px', align: 'center'}}>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -57,7 +57,7 @@ function Contact() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ display: 'block', marginBottom: '10px' }}
+          style={{ display: 'block', marginBottom: '10px', align: 'center'}}
         />
         <label htmlFor="message">Message</label>
         <textarea
