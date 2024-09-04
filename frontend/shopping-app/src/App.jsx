@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Login from './components/Login';
 import Nav from './components/Navbar';
 import EnrollForm from './components/EnrollForm';
+import Cart from './pages/Cart';
 import './App.css';
 import './index.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/enrollform" element={<EnrollForm />} />
+          <Route path="/cart" element={<Cart />} /> 
         </Routes>
       </div>
     </Router>
@@ -31,3 +33,5 @@ function App() {
 }
 
 export default App;
+
+
