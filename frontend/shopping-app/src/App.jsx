@@ -6,23 +6,26 @@ import Products from './pages/Products';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
-import { AllProducts1 } from './components/AllProducts1'; 
+//import { AllProducts1 } from './components/AllProducts1'; 
 import EnrollForm from './components/EnrollForm';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import './style.css'; 
+//import AllProducts1 from './components/AllProducts1';
+//`import Nav from './components/Nav';
 
 const App = () => {
   const [data, setData] = useState(null); 
 
   const getData = async () => {
     try {
-      const response = await Axios.get("http://localhost:3000/getData");
+      const response = await Axios.get("REACT_APP_API_URL}");
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+  
 
   useEffect(() => {
     getData();
@@ -43,7 +46,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/enrollform" element={<EnrollForm />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/allproducts1" element={<AllProducts1 />} />
+         
+          
         </Routes>
       </div>
     </Router>

@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import facialSerumImg from '../assets/facial_serum.jpg';
-import hairSerumImg from '../assets/hair_serum.jpg';
-import oliveOilSoapImg from '../assets/olive_oil_soap.jpg';
-import turmericSoapImg from '../assets/turmeric_soap.jpg';
-import './AllProducts.css';
-
+import './AllProducts.css'; 
+//import nav from './componenets/Nav';
 
 const AllProducts1 = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/Products') 
-      .then(res => {
-        setProducts(res.data);
-      })
-      .catch(err => {
-        console.error('Error fetching products:', err);
-      });
-  }, []); 
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/products`);
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <div className="products-container" style={{ padding: '20px' }}>
@@ -28,7 +27,7 @@ const AllProducts1 = () => {
           <p>No products available.</p>
         ) : (
           products.map(product => (
-            <div key={product.id} style={{ margin: '20px', border: '1px solid #ddd', borderRadius: '8px', padding: '10px', width: '250px', textAlign: 'center' }}>
+            <div key={product._id} style={{ margin: '20px', border: '1px solid #ddd', borderRadius: '8px', padding: '10px', width: '250px', textAlign: 'center' }}>
               <img src={product.image} alt={product.name} style={{ width: '100%', height: 'auto', borderRadius: '4px' }} />
               <h2 style={{ fontSize: '1.2em' }}>{product.name}</h2>
               <p>{product.description}</p>
@@ -39,18 +38,7 @@ const AllProducts1 = () => {
       </div>
     </div>
   );
-}
+};
 
-const Nav = () => {
-  return (
-    <nav>
-      <img src={facialSerumImg} alt="Facial Serum" />
-      <img src={hairSerumImg} alt="Hair Serum" />
-      <img src={oliveOilSoapImg} alt="Olive Oil Soap" />
-      <img src={turmericSoapImg} alt="Turmeric Soap" />
-    </nav>
-  );
-}
-
-export { AllProducts1, Nav };
+export default AllProducts1;
 

@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import productRoutes from './controllers/products.mjs';
+//import fetchProducts from './fetchProducts.mjs';
 
 
 dotenv.config();
@@ -38,3 +39,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 });
+
+
+  

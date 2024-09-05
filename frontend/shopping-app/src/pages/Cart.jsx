@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-//import classes from "./Navbar.css"; // Import CSS module
+
 
 
 export const CartProvider = ({ children }) => {

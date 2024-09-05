@@ -13,4 +13,6 @@ I set up my routes and connected my pages. I set up a login page with email. On 
 
 On my backend I set up my CRUD Functionality. I did do my authenication. I set up my dependicies in Mongodb Data base set up my products page. 
 
-I learned a lot on this journey which was definately a struggle. I cried so hard this morning I didnt know if I was going to be able to present my page but I pulled through. I will continue to work on this project because its so much I want to finish with this. Thank you so much for be a great insturtor. 
+I learned a lot on this journey which was definately a struggle. I cried so hard this morning I didnt know if I was going to be able to present my page but I pulled through. I will continue to work on this project because its so much I want to finish with this. Thank you so much for be a great insturtor.
+
+I have my back and front end working, Prices and images with descriptions are showing up. I need to work on my cart and my blog. I also want to do a sign up page which I only have a login. 

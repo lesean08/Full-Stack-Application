@@ -5,7 +5,7 @@ import hairSerumImg from '../assets/hair_serum.jpg';
 import oliveOilSoapImg from '../assets/olive_oil_soap.jpg';
 import turmericSoapImg from '../assets/turmeric_soap.jpg';
 
-
+// Initial products data
 const initialProducts = [
   {
     name: "Facial Serum",
@@ -34,17 +34,17 @@ const initialProducts = [
 ];
 
 function Products() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(initialProducts); // Use initialProducts as fallback
 
     const getProducts = () => {
-        axios.get('http://localhost:3000/Products')
+        axios.get(process.env.REACT_APP_API_URL) // Use environment variable for API URL
             .then(res => {
                 setProducts(res.data);
                 console.log(res.data);
             })
             .catch(err => {
                 console.error('Error fetching products:', err);
-                // Optionally set some error state here
+                setProducts(initialProducts); // Fallback to initial products if fetch fails
             });
     };
 
@@ -55,10 +55,10 @@ function Products() {
             <div className="products-container">
                 {products.length > 0 ? (
                     products.map(product => (
-                        <div key={product.id} className="product-item">
+                        <div key={product.name} className="product-item">
+                            <img src={product.image} alt={product.name} className="product-image" />
                             <h2>{product.name}</h2>
                             <p>{product.description}</p>
-                            <img src={product.image} alt={product.name} className="product-image" />
                             <p>${product.price.toFixed(2)}</p>
                         </div>
                     ))
