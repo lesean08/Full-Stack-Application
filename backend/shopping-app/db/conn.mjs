@@ -10,6 +10,8 @@ const db = mongoose.connection;
 mongoose.connect(mongoURI);
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
+
+    
 })
 
 export default db;

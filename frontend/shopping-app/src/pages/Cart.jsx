@@ -1,26 +1,41 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+//import classes from "./Navbar.css"; // Import CSS module
+
+
+export const CartProvider = ({ children }) => {
+  const [cartCount, setCartCount] = useState(0);
+  
+  return (
+    <CartContext.Provider value={{ cartCount, setCartCount }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
 export default function Navbar(props) {
   const { isLoggedIn, setSearch } = props;
-
-  const cart = useContext(CartContext);
-  const cartCount = cart.cartCount;
+  const { cartCount } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    let inputValue = e.target.value.toLowerCase();
+    const inputValue = e.target.value.toLowerCase();
     setSearch(inputValue);
   };
 
   const userHandler = () => {
     if (isLoggedIn) {
-      window.location = "/user";
+      navigate("/user");
     } else {
-      window.location = "/signup";
+      navigate("/signup");
     }
   };
 
-  const shoppingCartHandler = (e) => {
-    window.location = "/cart";
+  const shoppingCartHandler = () => {
+    navigate("/cart");
   };
 
   return (
@@ -28,7 +43,7 @@ export default function Navbar(props) {
       <div className={classes.iconLeft}>
         <PersonIcon className={classes.personIcon} onClick={userHandler} />
         {isLoggedIn && (
-          <p style={{ marginLeft: "10px", display: "inline" }}>logged in</p>
+          <p className={classes.loggedInText}>logged in</p>
         )}
       </div>
       <div className={classes.searchBar}>
@@ -41,16 +56,7 @@ export default function Navbar(props) {
         <SearchIcon className={classes.searchIcon} />
       </div>
       <div className={classes.iconRight}>
-        <p
-          style={{
-            right: "30px",
-            top: "3px",
-            display: "inline",
-            position: "absolute",
-          }}
-        >
-          {cartCount}
-        </p>
+        <p className={classes.cartCount}>{cartCount}</p>
         <ShoppingCartIcon
           className={classes.shoppingCart}
           onClick={shoppingCartHandler}
@@ -59,13 +65,3 @@ export default function Navbar(props) {
     </nav>
   );
 }
-
-
-
-
-
-
-
-
-
-

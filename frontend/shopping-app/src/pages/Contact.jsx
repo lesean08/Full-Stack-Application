@@ -12,7 +12,7 @@ function Contact() {
 
     axios
       .post(
-        "http://localhost:3000", 
+        "http://localhost:3000/Products", 
         { email, message },
         { headers: { Accept: "application/json" } }
       )

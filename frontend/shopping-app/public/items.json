@@ -1,0 +1,29 @@
+[
+  {
+  
+    "name": "Facial Serum",
+    "image": "/images/facialSerumImg.jpg",
+    "price": 25.0,
+    "description": "Our Facial Serum is made with all Organic and Natural ingredients. Rids wrinkles, facial lines, dark spots, restores natural moisture."
+  },
+  {
+    "name": "Hair Serum",
+    "image": "/images/hairSerumImg.jpg",
+    "price": 18.0,
+    "description": "Want something to get your hair back to your natural pattern? This Hair Serum will definitely do the trick. One of our top-selling items. Made with all Organic and Natural ingredients."
+  },
+  {
+    
+    "name": "Olive Oil Soap",
+    "image": "/images/oliveOilSoapImg.jpg",
+    "price": 6.0,
+    "description": "Great soap for removing make-up. It is also a great moisturizing soap, keeping your skin moisturized and healthy. Made with all Organic and Natural ingredients."
+  },
+  {
+    
+    "name": "Turmeric Soap",
+    "image": "/images/turmericSoapImg.jpg",
+    "price": 12.0,
+    "description": "This soap is amazing! Gives you a youthful and glowing skin. Brightens skin, rids dark spots, moisturizes, and much more!"
+  }
+]

@@ -1,0 +1,44 @@
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .iconLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .personIcon {
+    cursor: pointer;
+  }
+  
+  .loggedInText {
+    margin-left: 10px;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchIcon {
+    cursor: pointer;
+  }
+  
+  .iconRight {
+    position: relative;
+  }
+  
+  .cartCount {
+    position: absolute;
+    right: 30px;
+    top: 3px;
+    display: inline;
+  }
+  
+  .shoppingCart {
+    cursor: pointer;
+  }
+  

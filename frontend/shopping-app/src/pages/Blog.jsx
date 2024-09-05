@@ -22,12 +22,12 @@ const Blog = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-end">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home" style={{ color: "white" }}>Skin</Nav.Link>
-                        <Nav.Link href="#about" style={{ color: "white" }}>Hair</Nav.Link>
-                        <Nav.Link href="#blog" style={{ color: "white" }}>Body</Nav.Link>
-                        <Nav.Link href="#contact" style={{ color: "white" }}>Nutrients</Nav.Link>
+                        <Nav.Link href="#home" style={{ color: "white" }}> Skin </Nav.Link>
+                        <Nav.Link href="#about" style={{ color: "white" }}> Hair </Nav.Link>
+                        <Nav.Link href="#blog" style={{ color: "white" }}> Body </Nav.Link>
+                        <Nav.Link href="#contact" style={{ color: "white" }}> Nutrients </Nav.Link>
                     </Nav>
-                    <Form className="d-flex ml-3">
+                    <Form className="d-flex ml-auto">
                         <FormControl
                             type="text"
                             placeholder="Search"
@@ -37,10 +37,12 @@ const Blog = () => {
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
+            <p>Find the latest information on Skin and Hair Care!!</p>
         </div>
     );
 };
 
 export default Blog;
+
 
 

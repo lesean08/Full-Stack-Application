@@ -1,22 +1,39 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import React, { useState, useEffect } from 'react'; 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Axios from 'axios'; 
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-import Login from './components/Login';
-import Nav from './components/Navbar';
-import EnrollForm from './components/EnrollForm';
 import Cart from './pages/Cart';
-import './App.css';
-import './index.css';
+import { AllProducts1 } from './components/AllProducts1'; 
+import EnrollForm from './components/EnrollForm';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
+import './style.css'; 
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(null); 
+
+  const getData = async () => {
+    try {
+      const response = await Axios.get("http://localhost:3000/getData");
+      setData(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Router>
-      <Nav />
+      <Navbar />
       <div>
         <h1>Natural Skin and Hair</h1>
+        {data && <div>{JSON.stringify(data)}</div>}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -25,7 +42,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/enrollform" element={<EnrollForm />} />
-          <Route path="/cart" element={<Cart />} /> 
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/allproducts1" element={<AllProducts1 />} />
         </Routes>
       </div>
     </Router>
@@ -33,5 +51,3 @@ function App() {
 }
 
 export default App;
-
-

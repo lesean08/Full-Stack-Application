@@ -10,12 +10,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Implement authentication logic here
+  
     if (email && password) {
-      // Navigate to another page or handle login success
+    
       navigate('/home');
     } else {
-      // Handle validation errors
+      
       setEmailError(email ? '' : 'Email is required.');
       setPasswordError(password ? '' : 'Password is required.');
     }
