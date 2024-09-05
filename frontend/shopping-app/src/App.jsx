@@ -36,7 +36,7 @@ const App = () => {
       <Navbar />
       <div>
         <h1>Natural Skin and Hair</h1>
-        {data && <div>{JSON.stringify(data)}</div>}
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

@@ -34,17 +34,17 @@ const initialProducts = [
 ];
 
 function Products() {
-    const [products, setProducts] = useState(initialProducts); // Use initialProducts as fallback
+    const [products, setProducts] = useState(initialProducts);
 
-    const getProducts = () => {
-        axios.get(process.env.REACT_APP_API_URL) // Use environment variable for API URL
+   const getProducts = () => {
+        axios.get(process.env.REACT_APP_API_URL) 
             .then(res => {
                 setProducts(res.data);
                 console.log(res.data);
             })
             .catch(err => {
                 console.error('Error fetching products:', err);
-                setProducts(initialProducts); // Fallback to initial products if fetch fails
+                setProducts(initialProducts); 
             });
     };
 

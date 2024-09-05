@@ -6,7 +6,7 @@ db.getCollection('Products').find({});
 async function fetchProducts() {
 
     try {
-        const response = await axios.get("http://localhost:3000/Products");
+        const response = await axios.get("REACT_APP_API_URL=http://localhost:3000");
         const { products } = response.data;
         return products;
     } catch (error) {
